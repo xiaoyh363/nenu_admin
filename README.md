@@ -1,12 +1,6 @@
 # nenu-admin
 
-这是一个极简的 vue admin 管理后台。改造于[vue-admin-template](https://panjiachen.gitee.io/vue-admin-template)，它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
-
-目前版本为 `v4.0+` 基于 `vue-cli` 进行构建，若你想使用旧版本，可以切换分支到[tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0)，它不依赖 `vue-cli`。
-
-## Extra
-
-如果你想要根据用户角色来动态生成侧边栏和 router，你可以使用该分支[permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
+这是一个极简的 vue admin 管理后台。改造于[vue-admin-template](https://panjiachen.gitee.io/vue-admin-template)，它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。目前版本为 `v4.0+` 基于 `vue-cli` 进行构建
 
 ## 相关项目
 
