@@ -176,7 +176,7 @@ export const constantRoutes = [
 ]
 
 const createRouter = () => new Router({
-  // mode: 'history', // require service support
+  mode: 'history', // browserHistory 模式在生产环境下需要配置 nginx
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRoutes
 })
