@@ -22,3 +22,28 @@ export function logout() {
     method: 'post'
   })
 }
+
+export function getUserPage(page, limit, teacherQuery) {
+  return request({
+    url: '/vue-admin-template/user/getUserPage',
+    method: 'post'
+  })
+}
+
+export function getLabPage(page, limit, teacherQuery) {
+  return request({
+    url: '/vue-admin-template/user/getLabPage',
+    method: 'post'
+  })
+}
+
+export function getSensorPage(page, limit, teacherQuery) {
+  return request({
+    url: '/vue-admin-template/user/getSensorPage',
+    method: 'post'
+  })
+}
+
+export function deleteById() {
+
+}
