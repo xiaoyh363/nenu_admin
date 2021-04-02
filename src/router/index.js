@@ -56,50 +56,127 @@ export const constantRoutes = [
   },
 
   {
-    path: '/table',
+    path: '/user',
     component: Layout,
+    redirect: '/user/table',
+    name: '用户管理',
+    meta: { title: '用户管理', icon: 'user' },
+    children: [
+      {
+        path: 'table',
+        name: '用户列表',
+        component: () => import('@/views/user/list'),
+        meta: { title: '用户列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '添加用户',
+        component: () => import('@/views/user/save'),
+        meta: { title: '添加用户', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: '编辑用户',
+        component: () => import('@/views/user/save'),
+        meta: { title: '编辑用户', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+
+  {
+    path: '/lab',
+    component: Layout,
+    redirect: '/lab/table',
+    name: '实验室管理',
+    meta: { title: '实验室管理', icon: 'example' },
+    children: [
+      {
+        path: 'table',
+        name: '实验室列表',
+        component: () => import('@/views/lab/list'),
+        meta: { title: '实验室列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '添加实验室',
+        component: () => import('@/views/lab/save'),
+        meta: { title: '添加实验室', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: '编辑实验室',
+        component: () => import('@/views/lab/save'),
+        meta: { title: '编辑实验室', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+
+  {
+    path: '/sensor',
+    component: Layout,
+    redirect: '/sensor/table',
+    name: '传感器管理',
+    meta: { title: '传感器管理', icon: 'guide' },
+    children: [
+      {
+        path: 'table',
+        name: '传感器列表',
+        component: () => import('@/views/sensor/list'),
+        meta: { title: '传感器列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: '添加传感器',
+        component: () => import('@/views/sensor/save'),
+        meta: { title: '添加传感器', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: '编辑传感器',
+        component: () => import('@/views/sensor/save'),
+        meta: { title: '编辑传感器', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+
+  {
+    path: '/chart',
+    component: Layout,
+    redirect: '/chart',
     children: [{
       path: '',
-      name: 'table',
-      component: () => import('@/views/table/index'),
-      meta: { title: '表格', icon: 'table' }
+      name: '数据查询',
+      component: () => import('@/views/chart/index'),
+      meta: { title: '数据查询', icon: 'chart' }
     }]
   },
 
-  // {
-  //   path: '/example',
-  //   component: Layout,
-  //   redirect: '/example/table',
-  //   name: 'Example',
-  //   meta: { title: 'Example', icon: 'el-icon-s-help' },
-  //   children: [
-  //     {
-  //       path: 'table',
-  //       name: 'Table',
-  //       component: () => import('@/views/table/index'),
-  //       meta: { title: 'Table', icon: 'table' }
-  //     },
-  //     {
-  //       path: 'tree',
-  //       name: 'Tree',
-  //       component: () => import('@/views/tree/index'),
-  //       meta: { title: 'Tree', icon: 'tree' }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/',
+    children: [{
+      path: '',
+      name: 'Dashboard',
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: '系统管理', icon: 'documentation' }
+    }]
+  },
 
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: 'Form', icon: 'form' }
-  //     }
-  //   ]
-  // },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/',
+    children: [{
+      path: '',
+      name: 'Dashboard',
+      component: () => import('@/views/dashboard/index'),
+      meta: { title: '关于我们', icon: 'link' }
+    }]
+  },
 
   // {
   //   path: '/nested',
@@ -160,16 +237,16 @@ export const constantRoutes = [
   //   ]
   // },
 
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
-      {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: '外部链接', icon: 'link' }
-      }
-    ]
-  },
+  // {
+  //   path: 'external-link',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
+  //       meta: { title: '外部链接', icon: 'link' }
+  //     }
+  //   ]
+  // },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
